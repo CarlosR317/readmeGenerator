@@ -38,7 +38,7 @@ const questions = [
         name:"questions",
     }
 ];
-
+then(answers => {})
 
 // description
 
@@ -47,7 +47,7 @@ function init() {
     inquirer.prompt(questions).then(function (answers) {
         var readMe = generateMarkdown(answers);
         fs.writeFile("generateReadme.md", function (error) {
-            if (error) { return this.function(answers) } else { }
+            if (error.isTtyError) {} else {then(function(answers){}) }
         })
     })
 }
