@@ -1,13 +1,30 @@
 const inquirer = require("inquirer");
 
+const axios = require("axios");
+
+// this was provided by github doc resources.
+// what do I put in the ('')
+axios.get('')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  });
+// github resources said to put this
+// Accept: application/vnd.github.v3+json
 
 const generateMarkdown = require("./util/generateMarkdown");
 const fs = require("fs");
 
-// fs.writeFile("");
 
 // array of questions for user
-const questions = [
+const questionsArray = [
     {
         name: "title",
         message: "What is the name of your project?",
@@ -17,13 +34,14 @@ const questions = [
         message: "What is your project about?",
         type: "input",
     }, {
-        // do I put the actual table of contents here?
+        // do I put the actual table of contents here or do I put something that brings you to the table of contents on the bottom?
         name: "table of contents",
         message: "",
-        // type: "input",
+        // type: "input", ?
     }, {
         name: "installation",
         message: "Installation instructions",
+        type: "input",
     }, {
         name: "usage",
         message: "Information on usage?",
@@ -42,6 +60,9 @@ const questions = [
         type: "input",
     }, {
         name: "questions",
+        message: "What is your GitHub user name",
+        message: "what is your GitHub email",
+        type: "input",
     }
 ];
 
@@ -76,6 +97,7 @@ then(answers => { })
 
 // ## License of project <a name="license"></a>
 // do I type the license here or does it get placed here by the user input?
+// notice: MIT license 
 // "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)"
 
 // ## Contributions to project <a name="contributing"></a>
@@ -91,11 +113,12 @@ then(answers => { })
 
 // function to initialize program
 function init() {
-    inquirer.prompt(questions).then(function (answers) {
+    inquirer.prompt(questionsArray).then((answers) => {
+        console.log(JSON.stringify(answers, null, ''));
         var readMe = generateMarkdown(answers);
-        fs.writeFile("generateReadme.md", function (error, questions) {
+        fs.writeFile("generateReadme.md", function (error, questionsArray) {
             if (error) { return console.log(error) }
-            { console.log(questions) }
+            { console.log(questionsArray) }
         })
     })
 }
