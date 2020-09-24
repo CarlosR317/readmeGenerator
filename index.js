@@ -16,29 +16,29 @@ const questions = [
         name: "description",
         message: "what is your project about?",
         type: "input",
-    },{
+    }, {
         name: "table of contents",
         message: "",
         type: "input",
     }, {
-        name:"usage",
+        name: "usage",
         message: "What is this project used for?",
         type: "input",
-    
-    },{
-        name:"license",
 
-    },{
+    }, {
+        name: "license",
+
+    }, {
         name: "contributing",
         Message: "How did you contribute?",
         type: "",
-    },{
+    }, {
         name: "tests",
     }, {
-        name:"questions",
+        name: "questions",
     }
 ];
-then(answers => {})
+then(answers => { })
 
 // description
 
@@ -47,7 +47,8 @@ function init() {
     inquirer.prompt(questions).then(function (answers) {
         var readMe = generateMarkdown(answers);
         fs.writeFile("generateReadme.md", function (error) {
-            if (error.isTtyError) {} else {then(function(answers){}) }
+            if (error) {return console.log(error)}
+             { console.log(questions) }
         })
     })
 }
