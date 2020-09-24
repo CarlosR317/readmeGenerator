@@ -14,7 +14,7 @@ const questions = [
         type: "input",
     }, {
         name: "description",
-        message: "what is your project about?",
+        message: "What is your project about?",
         type: "input",
     }, {
         // do I put the actual table of contents here?
@@ -23,10 +23,10 @@ const questions = [
         // type: "input",
     }, {
         name: "installation",
-        message: "",
+        message: "Installation instructions",
     }, {
         name: "usage",
-        message: "What is this project used for?",
+        message: "Information on usage?",
         type: "input",
 
     }, {
@@ -34,16 +34,19 @@ const questions = [
         badge: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
     }, {
         name: "contributing",
-        Message: "How did you contribute?",
-        type: "",
+        Message: "guidelines to contribution?",
+        type: "input",
     }, {
         name: "tests",
+        message: "Instructions on test",
+        type: "input",
     }, {
         name: "questions",
     }
 ];
 
 // do i put this here? I thought the answers come form the user input?
+// do I need to add a filter and where would i put it?
 then(answers => { })
 
 
