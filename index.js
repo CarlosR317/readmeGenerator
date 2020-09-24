@@ -4,26 +4,28 @@ const inquirer = require("inquirer");
 const generateMarkdown = require("./util/generateMarkdown");
 const fs = require("fs");
 
-fs.writeFile("");
+// fs.writeFile("");
 
 // array of questions for user
 const questions = [
 {name:"title",
-message:"StockFinder",
-type:"input",}
+message:"What is the name of your project",
+type:"input",},{
+
+}
+
 ];
 
-// function to write README file
-function generateMarkdown(data) {
-    return '#${data.title}'
-}
 
 // description
 
 // function to initialize program
 function init() {
 inquirer.prompt(questions).then(function(answers){
-    generateMarkdown(data);
+    var readMe = generateMarkdown(answers);
+    fs.writeFile("generateReadme.md", function(error){
+if{}else{}
+    })
 })
 }
 
