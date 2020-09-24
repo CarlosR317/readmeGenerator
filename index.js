@@ -17,11 +17,26 @@ const questions = [
         message: "what is your project about?",
         type: "input",
     },{
-        name: "",
+        name: "table of contents",
         message: "",
         type: "input",
-    }
+    }, {
+        name:"usage",
+        message: "What is this project used for?",
+        type: "input",
+    
+    },{
+        name:"license",
 
+    },{
+        name: "contributing",
+        Message: "How did you contribute?",
+        type: "",
+    },{
+        name: "tests",
+    }, {
+        name:"questions",
+    }
 ];
 
 
