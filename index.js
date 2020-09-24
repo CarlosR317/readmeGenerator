@@ -19,7 +19,7 @@ axios.get('')
 
 //this was also provided by Github resources, says it is to post things but I do not think i actually need this one   
 
-//   axios.post('/user', {
+//   axios.post('', {
 //     firstName: 'Carlos',
 //     lastName: 'Ramirez'
 //   })
@@ -73,6 +73,7 @@ const questionsArray = [
         message: "Instructions on test",
         type: "input",
     }, {
+        // can I put more than one message or do I need to make to different questions object
         name: "questions",
         message: "What is your GitHub user name",
         message: "what is your GitHub email",
