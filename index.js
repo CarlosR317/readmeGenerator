@@ -1,21 +1,21 @@
 const inquirer = require("inquirer");
 
-const axios = require("axios");
+// const axios = require("axios");
 
-// this was provided by github doc resources.
-// what do I put in the ('')
-axios.get('')
-  .then(function (response) {
-    // handle success
-    console.log(response);
-  })
-  .catch(function (error) {
-    // handle error
-    console.log(error);
-  })
-  .then(function () {
-    // always executed
-  });
+// // this was provided by github doc resources.
+// // what do I put in the ('')
+// axios.get('')
+//   .then(function (response) {
+//     // handle success
+//     console.log(response);
+//   })
+//   .catch(function (error) {
+//     // handle error
+//     console.log(error);
+//   })
+//   .then(function () {
+//     // always executed
+//   });
 
 //this was also provided by Github resources, says it is to post things but I do not think i actually need this one   
 
@@ -47,12 +47,7 @@ const questionsArray = [
         name: "description",
         message: "What is your project about?",
         type: "input",
-    }, {
-        // do I put the actual table of contents here or do I put something that brings you to the table of contents on the bottom?
-        name: "table of contents",
-        message: "",
-        // type: "input", ?
-    }, {
+    },  {
         name: "installation",
         message: "Installation instructions",
         type: "input",
@@ -83,7 +78,7 @@ const questionsArray = [
 
 // do i put this here? I thought the answers come form the user input?
 // I am pretty sure that I need to add a filter but where would I put it, does it go in the answers?
-then(answers => { })
+// then(answers => { })
 
 
 // here is my table of contents. do I leave it here or do I put it in the array
@@ -95,7 +90,7 @@ then(answers => { })
 // 4. [Usage](#usage)
 // 5. [License](#license)
 // 6. [Contributing](#contributing)
-// 7. [Test](#tests)
+// 7. [Tests](#tests)
 // 8. [Questions](#questions)
 
 // ## Title of the project <a name="title"></a>
@@ -129,11 +124,13 @@ then(answers => { })
 // function to initialize program
 function init() {
     inquirer.prompt(questionsArray).then((answers) => {
-        console.log(JSON.stringify(answers, null, ''));
+        console.log(answers);
+    
+        
         var readMe = generateMarkdown(answers);
-        fs.writeFile("generateReadme.md", function (error, questionsArray) {
+        fs.writeFile("generateReadme.md",readMe, function (error) {
             if (error) { return console.log(error) }
-            { console.log(questionsArray) }
+            else{ console.log("success") }
         })
     })
 }
