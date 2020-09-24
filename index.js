@@ -20,8 +20,8 @@ axios.get('')
 //this was also provided by Github resources, says it is to post things but I do not think i actually need this one   
 
 //   axios.post('/user', {
-//     firstName: 'Fred',
-//     lastName: 'Flintstone'
+//     firstName: 'Carlos',
+//     lastName: 'Ramirez'
 //   })
 //   .then(function (response) {
 //     console.log(response);
