@@ -16,7 +16,21 @@ axios.get('')
   .then(function () {
     // always executed
   });
-// github resources said to put this
+
+//this was also provided by Github resources, says it is to post things but I do not think i actually need this one   
+
+//   axios.post('/user', {
+//     firstName: 'Fred',
+//     lastName: 'Flintstone'
+//   })
+//   .then(function (response) {
+//     console.log(response);
+//   })
+//   .catch(function (error) {
+//     console.log(error);
+//   });
+
+// github resources said to put this to get API, the above part is supposed to be doing the same thing as well
 // Accept: application/vnd.github.v3+json
 
 const generateMarkdown = require("./util/generateMarkdown");
@@ -67,7 +81,7 @@ const questionsArray = [
 ];
 
 // do i put this here? I thought the answers come form the user input?
-// do I need to add a filter and where would i put it?
+// I am pretty sure that I need to add a filter but where would I put it, does it go in the answers?
 then(answers => { })
 
 
@@ -123,5 +137,5 @@ function init() {
     })
 }
 
-// function call to initialize program (do I need this one here?)
+// function call to initialize program (do I need this one here, I do not think that I need this?)
 init();
