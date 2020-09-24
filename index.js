@@ -1,38 +1,5 @@
 const inquirer = require("inquirer");
 
-// const axios = require("axios");
-
-// // this was provided by github doc resources.
-// // what do I put in the ('')
-// axios.get('')
-//   .then(function (response) {
-//     // handle success
-//     console.log(response);
-//   })
-//   .catch(function (error) {
-//     // handle error
-//     console.log(error);
-//   })
-//   .then(function () {
-//     // always executed
-//   });
-
-//this was also provided by Github resources, says it is to post things but I do not think i actually need this one   
-
-//   axios.post('', {
-//     firstName: 'Carlos',
-//     lastName: 'Ramirez'
-//   })
-//   .then(function (response) {
-//     console.log(response);
-//   })
-//   .catch(function (error) {
-//     console.log(error);
-//   });
-
-// github resources said to put this to get API, the above part is supposed to be doing the same thing as well
-// Accept: application/vnd.github.v3+json
-
 const generateMarkdown = require("./util/generateMarkdown");
 const fs = require("fs");
 
@@ -76,22 +43,27 @@ const questionsArray = [
     }
 ];
 
-// do i put this here? I thought the answers come form the user input?
-// I am pretty sure that I need to add a filter but where would I put it, does it go in the answers?
-// then(answers => { })
+// description
+
+// function to initialize program
+function init() {
+    inquirer.prompt(questionsArray).then((answers) => {
+        console.log(answers);
+    
+        
+        var readMe = generateMarkdown(answers);
+        fs.writeFile("generateReadme.md",readMe, function (error) {
+            if (error) { return console.log(error) }
+            else{ console.log("success") }
+        })
+    })
+}
+
+// function call to initialize program (do I need this one here, I do not think that I need this?)
+init();
 
 
-// here is my table of contents. do I leave it here or do I put it in the array
-
-// # Table of contents
-// 1. [Title](#title)
-// 2. [Description](#description)
-// 3. [Installation](#installation)
-// 4. [Usage](#usage)
-// 5. [License](#license)
-// 6. [Contributing](#contributing)
-// 7. [Tests](#tests)
-// 8. [Questions](#questions)
+// do I leave this here or put it in the generateMarkdown?
 
 // ## Title of the project <a name="title"></a>
 //do I type the title here or does it get placed here by the user input?
@@ -118,22 +90,3 @@ const questionsArray = [
 
 // ## Questions <a name="questions"></a>
 // do I type the questions here or does it get placed here by the user input?
-
-// description
-
-// function to initialize program
-function init() {
-    inquirer.prompt(questionsArray).then((answers) => {
-        console.log(answers);
-    
-        
-        var readMe = generateMarkdown(answers);
-        fs.writeFile("generateReadme.md",readMe, function (error) {
-            if (error) { return console.log(error) }
-            else{ console.log("success") }
-        })
-    })
-}
-
-// function call to initialize program (do I need this one here, I do not think that I need this?)
-init();
