@@ -1,5 +1,6 @@
-# Stock Finder
-  learning about stocks and keeping track of them
+# test
+  [![License: none](https://img.shields.io/badge/License-none-yellow.svg)](https://opensource.org/licenses/none)
+  tes
   ## Table of content 
   1. [Title](#title)
   2. [Description](#description) 
@@ -9,6 +10,4 @@
   6. [Contributing](#contributing)
   7. [Tests](#tests)
   8. [Questions](#questions)
-  able to use on any device and requires no installation from the user can teach about stocks and can keep track of different stocks Carlos Ramirez
-  NA
-  cramire5@ycp.edu
+  testesnoneyestestblabladas

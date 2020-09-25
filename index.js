@@ -25,10 +25,12 @@ const questionsArray = [
 
     }, {
         name: "license",
-        badge: "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)",
-    }, {
+        message: "What is the license?",
+        type: 'list',
+        choices: ["MIT", "APACHE2.0", "GPL3.0", "BSD3", "none"]
+        }, {
         name: "contributing",
-        Message: "guidelines to contribution?",
+        message: "Guidelines to contribution?",
         type: "input",
     }, {
         name: "tests",
@@ -36,9 +38,13 @@ const questionsArray = [
         type: "input",
     }, {
         // can I put more than one message or do I need to make to different questions object
-        name: "questions",
-        message: "What is your GitHub user name",
-        message: "what is your GitHub email",
+        name: "github",
+        message: "what is your GitHub user name?", 
+        type: "input",
+    }, {
+        // can I put more than one message or do I need to make to different questions object
+        name: "email",
+        message: "what is your email", 
         type: "input",
     }
 ];
@@ -49,7 +55,6 @@ const questionsArray = [
 function init() {
     inquirer.prompt(questionsArray).then((answers) => {
         console.log(answers);
-    
         
         var readMe = generateMarkdown(answers);
         fs.writeFile("generateReadme.md",readMe, function (error) {
@@ -59,8 +64,12 @@ function init() {
     })
 }
 
+init()
+
+
+
 // function call to initialize program (do I need this one here, I do not think that I need this?)
-init();
+
 
 
 // do I leave this here or put it in the generateMarkdown?
