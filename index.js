@@ -1,5 +1,5 @@
+// this part installs everything
 const inquirer = require("inquirer");
-
 const generateMarkdown = require("./util/generateMarkdown");
 const fs = require("fs");
 
@@ -47,13 +47,13 @@ const questionsArray = [
     }
 ];
 
-// description
 
-// function to initialize program
+// function to initialize program 
 function init() {
     inquirer.prompt(questionsArray).then((answers) => {
         console.log(answers);
 
+        // this part builds the function that writes the data onto the ReadMe file
         var readMe = generateMarkdown(answers);
         fs.writeFile("generateReadme.md", readMe, function (error) {
             if (error) { return console.log(error) }
@@ -61,6 +61,6 @@ function init() {
         })
     })
 }
-
+// this actually gets everything going
 init()
 

@@ -1,5 +1,7 @@
 // function to generate markdown for README
 function generateMarkdown(answers) {
+
+  // this part adds the user inputs onto the actual readMe file and will put it in the different sections
   return `# Title 
    ${answers.title}
 
@@ -37,7 +39,6 @@ function generateMarkdown(answers) {
   # Questions
   ${answers.email}
 `;
-
 }
 
 module.exports = generateMarkdown;
