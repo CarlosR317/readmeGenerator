@@ -31,10 +31,10 @@ function generateMarkdown(answers) {
   # Tests
   ${answers.tests}
   
-  # Questions: Github username
+  # Questions
   ${answers.github}
   
-  # Questions: Any additional questions please email me @
+  # Questions
   ${answers.email}
 `;
 

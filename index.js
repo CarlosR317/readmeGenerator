@@ -34,7 +34,7 @@ const questionsArray = [
         type: "input",
     }, {
         name: "tests",
-        message: "Instructions on test",
+        message: "Instructions on testing?",
         type: "input",
     }, {
         name: "github",
@@ -42,7 +42,7 @@ const questionsArray = [
         type: "input",
     }, {
         name: "email",
-        message: "what is your email",
+        message: "what is your email?",
         type: "input",
     }
 ];
